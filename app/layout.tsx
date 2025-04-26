@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import GoogleAdsense from '@/components/google-adsense'
 
 export const metadata: Metadata = {
   title: 'DeepWiki Badge Generator',
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
+      <GoogleAdsense pId={process.env.GOOGLE_ADSENSE_PUBLISHER_ID ?? ''} />
     </html>
   )
 }
