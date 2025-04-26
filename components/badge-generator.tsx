@@ -116,7 +116,17 @@ export function BadgeGenerator() {
     }, 2000)
   }
 
-  const badgeUrl = `https://img.shields.io/badge/DeepWiki-${owner ? owner : "owner"}%2F${repo ? repo : "repo"}-blue.svg?logo=${base64DevinIcon()}`
+  /**
+  * underscore to double underscore
+  * dash to doubledash
+  */
+  const convertText = (text: string) => {
+    return text
+      .replace(/_/g, "__")
+      .replace(/-/g, "--")
+ }
+
+  const badgeUrl = `https://img.shields.io/badge/DeepWiki-${convertText(owner ?? "owner")}%2F${convertText(repo ?? "repo")}-blue.svg?logo=${base64DevinIcon()}`
   const deepWikiUrl = `https://deepwiki.com/${owner}/${repo}`
 
   const markdownCode = `[![DeepWiki](${badgeUrl})](${deepWikiUrl})`
