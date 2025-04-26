@@ -91,8 +91,8 @@ export function BadgeGenerator() {
     if(res.error){
       setStatus("not-exists")
       toast({
-        title: "Repository not found",
-        description: "The repository does not exist on GitHub",
+        title: "Repository not found or private",
+        description: "The repository is either private or does not exist on DeepWiki",
         variant: "destructive",
       })
       return
@@ -226,9 +226,11 @@ export function BadgeGenerator() {
 
         {status === "not-exists" && (
           <div className="text-center p-4 border rounded-md bg-muted">
-            <p className="text-destructive font-medium">Repository not found on DeepWiki</p>
+            <p className="text-destructive font-medium">
+              Repository not found or private
+            </p>
             <p className="text-sm text-muted-foreground mt-1">
-              Make sure the repository exists and is registered on DeepWiki
+              Make sure the repository is public and exists on GitHub.
             </p>
           </div>
         )}
