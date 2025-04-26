@@ -4,18 +4,18 @@ import GoogleAdsense from '@/components/google-adsense'
 
 export const metadata: Metadata = {
   title: 'DeepWiki Badge Generator',
-  description: 'Generate badges for your DeepWiki from GitHub repositories',
+  description: 'A simple tool to generate DeepWiki badges for your GitHub README',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://deepwiki.ryoppippi.com',
     title: 'DeepWiki Badge Generator',
-    description: 'Generate badges for your DeepWiki from GitHub repositories',
+    description: 'A simple tool to generate DeepWiki badges for your GitHub README',
     images: `${process.env.CF_PAGES_URL}/screenshot.jpeg`,
   },
   twitter: {
     title: 'DeepWiki Badge Generator',
-    description: 'Generate badges for your DeepWiki from GitHub repositories',
+    description: 'A simple tool to generate DeepWiki badges for your GitHub README',
     card: 'summary_large_image',
     creator: '@ryoppippi',
     images: `${process.env.CF_PAGES_URL}/screenshot.jpeg`,

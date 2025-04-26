@@ -136,7 +136,7 @@ export function BadgeGenerator() {
     <Card className="w-full">
       <CardHeader>
         <CardTitle>Generate Your Badge</CardTitle>
-        <CardDescription>Enter your GitHub repository details to generate a DeepWiki badge</CardDescription>
+        <CardDescription>Generate badges from your GitHub repositories</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-2">
