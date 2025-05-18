@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fix:knip": "knip --fix --no-exit-code"
   },
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
@@ -66,6 +67,7 @@
     "babel-plugin-react-compiler": "19.1.0-rc.1",
     "eslint": "^9.27.0",
     "eslint-config-next": "15.3.1",
+    "knip": "^5.56.0",
     "next-rspack": "^15.3.2",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
