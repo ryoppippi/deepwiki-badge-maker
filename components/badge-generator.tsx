@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { CheckIcon, CopyIcon, GithubIcon, LoaderIcon } from "lucide-react"
+import { GithubIcon, LoaderIcon } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { checkIfRepositoryExists } from "@/lib/github"
 import { base64DevinIcon } from "@/lib/deepwiki"
+import { CopyCheckIconHTML, CopyCheckIconMarkdown, useCopy } from "./copy"
 
 type RepoStatus = "idle" | "loading" | "exists" | "not-exists" | "error"
 
@@ -18,9 +19,9 @@ export function BadgeGenerator() {
   const [owner, setOwner] = useState("")
   const [repo, setRepo] = useState("")
   const [status, setStatus] = useState<RepoStatus>("idle")
-  const [copied, setCopied] = useState({ markdown: false, html: false })
   const { toast } = useToast()
   const [urlError, setUrlError] = useState<string | null>(null)
+  const { copyToClipboard } = useCopy();
 
   const parseGitHubUrl = (url: string) => {
     if(status !== "idle"){
@@ -100,20 +101,6 @@ export function BadgeGenerator() {
     if(res.success){
       setStatus("exists")
     }
-  }
-
-  const copyToClipboard = (text: string, type: "markdown" | "html") => {
-    navigator.clipboard.writeText(text)
-    setCopied({ ...copied, [type]: true })
-
-    toast({
-      title: "Copied to clipboard",
-      description: `The ${type} code has been copied to your clipboard`,
-    })
-
-    setTimeout(() => {
-      setCopied({ ...copied, [type]: false })
-    }, 2000)
   }
 
   /**
@@ -212,7 +199,7 @@ export function BadgeGenerator() {
                       className="absolute top-2 right-2"
                       onClick={() => copyToClipboard(`${markdownCode}\n${creditComment}`, "markdown")}
                     >
-                      {copied.markdown ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="h-4 w-4" />}
+                      <CopyCheckIconMarkdown />
                     </Button>
                   </div>
                 </TabsContent>
@@ -227,7 +214,7 @@ export function BadgeGenerator() {
                       className="absolute top-2 right-2"
                       onClick={() => copyToClipboard(`${htmlCode}\n${creditComment}`, "html")}
                     >
-                      {copied.html ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="h-4 w-4" />}
+                      <CopyCheckIconHTML />
                     </Button>
                   </div>
                 </TabsContent>

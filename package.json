@@ -45,6 +45,7 @@
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
+    "jotai": "^2.12.4",
     "lucide-react": "^0.454.0",
     "next": "15.3.2",
     "react": "^19.1.0",
