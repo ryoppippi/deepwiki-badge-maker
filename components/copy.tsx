@@ -9,7 +9,7 @@ type CopyState = {
   html: boolean;
 };
 
-const copyAtom = atomWithReducer({"markdown": false, "html": false}, (state: CopyState, action: { type: keyof CopyState, to: boolean }) => {
+const copyAtom = atomWithReducer({markdown: false, html: false}, (state: CopyState, action: { type: keyof CopyState, to: boolean }) => {
   const { type, to } = action;
   switch (type) {
     case "markdown":
