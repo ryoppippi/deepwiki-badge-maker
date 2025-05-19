@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import withRspack from "next-rspack";
 
-const nextConfig = {
+export default withRspack({
 	output: "export",
 	experimental: {
 		reactCompiler: true,
@@ -15,6 +15,4 @@ const nextConfig = {
 	images: {
 		unoptimized: true,
 	},
-} satisfies NextConfig;
-
-export default withRspack(nextConfig);
+});
