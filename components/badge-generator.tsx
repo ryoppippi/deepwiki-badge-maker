@@ -240,11 +240,7 @@ function ButtonContent(props: ButtonContentProps) {
   )
 }
 
-type ButtonProps = {
-  promise: Promise<unknown>
-  onClick: () => void
-  disabled: boolean
-}
+type ButtonProps = ButtonContentProps & {}
 function BadgegenarateButton(props: ButtonProps) {
   return (
     <Suspense fallback={<ButtonLoading />}>
