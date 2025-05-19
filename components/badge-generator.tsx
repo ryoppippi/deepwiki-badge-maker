@@ -223,7 +223,7 @@ function ButtonLoading() {
 }
 
 type ButtonContentProps = {
-  promise: any;
+  promise: Promise<unknown>
   onClick: () => void
   disabled: boolean
 }
@@ -241,7 +241,7 @@ function ButtonContent(props: ButtonContentProps) {
 }
 
 type ButtonProps = {
-  promise: any;
+  promise: Promise<unknown>
   onClick: () => void
   disabled: boolean
 }
