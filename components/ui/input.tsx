@@ -8,7 +8,7 @@ const Input = ({
 	type,
 	...props
 }: React.ComponentProps<"input"> & {
-	ref: React.RefObject<HTMLInputElement>;
+	ref?: React.RefObject<HTMLInputElement>;
 }) => {
 	return (
 		<input
