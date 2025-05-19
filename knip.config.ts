@@ -1,6 +1,7 @@
 import type { KnipConfig } from "knip";
 
 export default {
+	ignoreDependencies: ["tailwindcss"],
 	next: {
 		config: ["next.config.{js,ts,cjs,mjs}"],
 		entry: [
