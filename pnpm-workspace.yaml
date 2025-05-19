@@ -1,8 +1,9 @@
 onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - '@tailwindcss/oxide'
+  - "@biomejs/biome"
+  - "@tailwindcss/oxide"
   - esbuild
   - sharp
   - simple-git-hooks
   - unrs-resolver
   - workerd
+useNodeVersion: 22.15.1
