@@ -5,10 +5,13 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"lint": "biome check .",
-		"format": "biome check --write .",
+		"lint": "pnpm run --stream --color /lint:/",
+		"lint:biome": "biome check .",
+		"lint:knip": "knip",
+		"format": "pnpm run --stream --color /format:/",
+		"format:biome": "biome check --write .",
+		"format:knip": "knip --fix --no-exit-code",
 		"typecheck": "tsc --noEmit",
-		"fix:knip": "knip --fix --no-exit-code",
 		"prepare": "simple-git-hooks"
 	},
 	"packageManager": "pnpm@10.11.0",
