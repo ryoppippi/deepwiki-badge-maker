@@ -28,9 +28,6 @@
 						"allow": ["warn", "error"]
 					}
 				}
-			},
-			"style": {
-				"useTemplate": "off"
 			}
 		}
 	},
