@@ -1,8 +1,9 @@
 {
 	"name": "deepwiki-badge-generator",
-	"version": "0.1.0",
 	"type": "module",
+	"version": "0.1.0",
 	"private": true,
+	"packageManager": "pnpm@10.11.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -22,7 +23,6 @@
 		"test:e2e": "vitest run --browser",
 		"prepare": "simple-git-hooks"
 	},
-	"packageManager": "pnpm@10.11.0",
 	"dependencies": {
 		"@fontsource/fira-mono": "^5.1.0",
 		"bits-ui": "^1.0.0",
@@ -36,29 +36,30 @@
 		"tailwind-variants": "^0.3.0"
 	},
 	"devDependencies": {
-		"@ryoppippi/eslint-config": "^1.0.0",
-		"eslint": "^9.18.0",
-		"eslint-plugin-svelte": "^2.50.0",
+		"@ryoppippi/eslint-config": "^0.3.7",
 		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.15.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/postcss": "^4.1.7",
+		"@testing-library/svelte": "^5.2.7",
+		"@testing-library/user-event": "^14.6.0",
 		"@types/node": "^22.15.18",
 		"@typescript/native-preview": "7.0.0-dev.20250523.1",
+		"@vitest/browser": "^2.1.8",
+		"@vitest/ui": "^2.1.8",
+		"eslint": "^9.18.0",
+		"eslint-plugin-format": "^1.0.1",
+		"eslint-plugin-svelte": "^3.9.1",
 		"knip": "^5.56.0",
 		"lint-staged": "^15.5.0",
+		"playwright": "^1.50.0",
 		"postcss": "^8.5.3",
 		"simple-git-hooks": "^2.12.1",
-		"svelte-check": "^5.0.1",
+		"svelte-check": "^4.2.1",
 		"tailwindcss": "^4.1.7",
 		"typescript": "^5.8.3",
 		"vite": "npm:rolldown-vite@latest",
-		"vitest": "^2.1.8",
-		"@vitest/browser": "^2.1.8",
-		"@vitest/ui": "^2.1.8",
-		"@testing-library/svelte": "^5.2.7",
-		"@testing-library/user-event": "^14.6.0",
-		"playwright": "^1.50.0"
+		"vitest": "^2.1.8"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
