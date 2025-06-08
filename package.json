@@ -29,6 +29,7 @@
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-svelte": "^0.468.0",
+		"mode-watcher": "^0.4.1",
 		"neverthrow": "^8.2.0",
 		"svelte": "^5.15.0",
 		"tailwind-merge": "^2.6.0",
