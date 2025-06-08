@@ -10,12 +10,8 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "pnpm run --stream --color /lint:/",
-		"lint:eslint": "eslint .",
-		"lint:knip": "knip",
-		"format": "pnpm run --stream --color /format:/",
-		"format:eslint": "eslint . --fix",
-		"format:knip": "knip --fix --no-exit-code",
+		"lint": "eslint .",
+		"format": "eslint . --fix",
 		"typecheck": "tsgo --noEmit",
 		"test": "vitest run",
 		"test:watch": "vitest",
@@ -50,7 +46,6 @@
 		"eslint": "^9.18.0",
 		"eslint-plugin-format": "^1.0.1",
 		"eslint-plugin-svelte": "^3.9.1",
-		"knip": "^5.56.0",
 		"lint-staged": "^15.5.0",
 		"playwright": "^1.50.0",
 		"simple-git-hooks": "^2.12.1",
@@ -64,6 +59,8 @@
 		"pre-commit": "pnpm lint-staged"
 	},
 	"lint-staged": {
-		"*": ["eslint --fix"]
+		"*": [
+			"eslint --fix"
+		]
 	}
 }
