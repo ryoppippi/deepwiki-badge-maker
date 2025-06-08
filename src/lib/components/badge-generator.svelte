@@ -1,24 +1,20 @@
 <script lang='ts'>
 	import {
-		Badge,
 		Button,
 		Card,
 		CardContent,
 		CardDescription,
 		CardHeader,
 		CardTitle,
-		Input,
 		Separator,
-		Tabs,
-		TabsContent,
-		TabsList,
-		TabsTrigger,
 	} from '$lib/components/ui';
 	import { base64DevinIcon } from '$lib/deepwiki';
 	import { checkIfRepositoryExists } from '$lib/github';
-	import Github from '~icons/lucide/github';
 	import Loader from '~icons/lucide/loader';
-	import CopyIcon, { copyToClipboard } from './copy.svelte';
+	import BadgeCodeTabs from './badge-code-tabs.svelte';
+	import BadgePreview from './badge-preview.svelte';
+	import RepositoryInput from './repository-input.svelte';
+	import RepositoryStatus from './repository-status.svelte';
 
 	let owner = $state('');
 	let repo = $state('');
@@ -101,8 +97,6 @@
 			isLoading = false;
 		}
 	}
-
-	let tabValue = $state('markdown');
 </script>
 
 <Card class='w-full'>
@@ -113,32 +107,12 @@
 		</CardDescription>
 	</CardHeader>
 	<CardContent class='space-y-6'>
-		<div class='space-y-2'>
-			<label class='text-sm font-medium' for='repoUrl'>
-				GitHub Repository URL
-			</label>
-			<div class='flex items-center space-x-2'>
-				<Github class='size-4 text-muted-foreground' />
-				<Input
-					id='repoUrl'
-					class={urlError ? 'border-red-500 focus-visible:ring-red-500' : ''}
-					oninput={e => parseGitHubUrl(e.currentTarget.value)}
-					placeholder='https://github.com/owner/repo'
-				/>
-			</div>
-			{#if urlError}
-				<p class='text-sm text-red-500 mt-1'>{urlError}</p>
-			{/if}
-		</div>
-
-		{#if owner && repo}
-			<div class='mt-2 flex items-center space-x-2'>
-				<span class='text-sm text-muted-foreground'>Detected:</span>
-				<Badge class='font-mono' variant='outline'>
-					{owner}/{repo}
-				</Badge>
-			</div>
-		{/if}
+		<RepositoryInput
+			onUrlChange={parseGitHubUrl}
+			{owner}
+			{repo}
+			{urlError}
+		/>
 
 		<Button
 			class='w-full'
@@ -154,63 +128,13 @@
 		</Button>
 
 		{#if repositoryCheckResult}
-			{#if repositoryCheckResult.isErr()}
-				<div class='text-center p-4 border rounded-md bg-muted'>
-					<p class='text-destructive font-medium'>
-						Repository not found or private
-					</p>
-					<p class='text-sm text-muted-foreground mt-1'>
-						Make sure the repository is public and exists on DeepWiki.
-					</p>
-				</div>
-			{:else}
+			<RepositoryStatus {repositoryCheckResult}>
 				<div class='space-y-4'>
-					<div class='flex items-center justify-center py-4'>
-						<a href={deepWikiUrl} rel='noopener noreferrer' target='_blank'>
-							<img alt='DeepWiki Badge' src={badgeUrl} />
-						</a>
-					</div>
-
+					<BadgePreview {badgeUrl} {deepWikiUrl} />
 					<Separator />
-
-					<div class='space-y-4'>
-						<h3 class='text-sm font-medium'>Embed this badge in your README</h3>
-
-						<Tabs class='w-full' bind:value={tabValue}>
-							<TabsList class='grid w-full grid-cols-2'>
-								<TabsTrigger value='markdown'>Markdown</TabsTrigger>
-								<TabsTrigger value='html'>HTML</TabsTrigger>
-							</TabsList>
-							<TabsContent value='markdown'>
-								<div class='relative'>
-									<pre class='bg-muted p-4 rounded-md overflow-x-auto text-sm font-mono'><code>{markdownCode}</code></pre>
-									<Button
-										class='absolute top-2 right-2'
-										onclick={() => copyToClipboard(`${markdownCode}\n${creditComment}`, 'markdown')}
-										size='sm'
-										variant='ghost'
-									>
-										<CopyIcon type='markdown' />
-									</Button>
-								</div>
-							</TabsContent>
-							<TabsContent value='html'>
-								<div class='relative'>
-									<pre class='bg-muted p-4 rounded-md overflow-x-auto text-sm font-mono'><code>{htmlCode}</code></pre>
-									<Button
-										class='absolute top-2 right-2'
-										onclick={() => copyToClipboard(`${htmlCode}\n${creditComment}`, 'html')}
-										size='sm'
-										variant='ghost'
-									>
-										<CopyIcon type='html' />
-									</Button>
-								</div>
-							</TabsContent>
-						</Tabs>
-					</div>
+					<BadgeCodeTabs {creditComment} {htmlCode} {markdownCode} />
 				</div>
-			{/if}
+			</RepositoryStatus>
 		{/if}
 	</CardContent>
 </Card>
