@@ -1,3 +1,4 @@
+import path from 'node:path';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
@@ -12,6 +13,13 @@ const config = {
 			precompress: false,
 			strict: true,
 		}),
+		typescript: {
+			config(config) {
+				config.include.push(path.join(import.meta.dirname, 'vite.config.ts'));
+				config.include.push(path.join(import.meta.dirname, 'vitest.config.ts'));
+				config.include.push(path.join(import.meta.dirname, 'vitest.workspace.ts'));
+			},
+		},
 		prerender: {
 			handleHttpError: ({ path, _referrer, message }) => {
 				// Ignore missing assets during prerendering

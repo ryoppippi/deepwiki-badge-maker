@@ -14,11 +14,5 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"skipLibCheck": true
-	},
-	"include": [
-		"src/**/*",
-		"vite.config.ts",
-		"vitest.config.ts",
-		"vitest.workspace.ts"
-	]
+	}
 }
