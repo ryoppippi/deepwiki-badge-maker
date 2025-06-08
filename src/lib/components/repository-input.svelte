@@ -7,9 +7,10 @@
 		repo: string;
 		urlError: string | null;
 		onUrlChange: (url: string) => void;
+		onSubmit?: () => void;
 	}
 
-	let { owner, repo, urlError, onUrlChange }: Props = $props();
+	let { owner, repo, urlError, onUrlChange, onSubmit }: Props = $props();
 </script>
 
 <div class='space-y-2'>
@@ -22,6 +23,11 @@
 			id='repoUrl'
 			class={urlError ? 'border-red-500 focus-visible:ring-red-500' : ''}
 			oninput={e => onUrlChange(e.currentTarget.value)}
+			onkeypress={(e) => {
+				if (e.key === 'Enter' && owner && repo && onSubmit) {
+					onSubmit();
+				}
+			}}
 			placeholder='https://github.com/owner/repo'
 		/>
 	</div>

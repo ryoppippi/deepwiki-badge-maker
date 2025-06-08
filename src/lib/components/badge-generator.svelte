@@ -108,6 +108,7 @@
 	</CardHeader>
 	<CardContent class='space-y-6'>
 		<RepositoryInput
+			onSubmit={generateBadge}
 			onUrlChange={parseGitHubUrl}
 			{owner}
 			{repo}
