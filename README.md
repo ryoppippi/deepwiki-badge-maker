@@ -4,11 +4,10 @@
 
 ![./public/screenshot.jpeg](./public/screenshot.jpeg)
 
-
-Generate your [DeepWiki](https://deepwiki.com) badges with ease! 
+Generate your [DeepWiki](https://deepwiki.com) badges with ease!
 
 Enter your repository url and get a badge link to use in your README.
 
-
 ## license
+
 [MIT](./LICENSE)
