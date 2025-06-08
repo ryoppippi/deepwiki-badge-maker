@@ -7,7 +7,7 @@
 		children: Snippet;
 	}
 
-	let { repositoryCheckResult, children }: Props = $props();
+	const { repositoryCheckResult, children }: Props = $props();
 </script>
 
 {#if repositoryCheckResult.isErr()}

@@ -8,7 +8,7 @@
 		creditComment: string;
 	}
 
-	let { markdownCode, htmlCode, creditComment }: Props = $props();
+	const { markdownCode, htmlCode, creditComment }: Props = $props();
 
 	let tabValue = $state('markdown');
 </script>

@@ -4,7 +4,7 @@
 		deepWikiUrl: string;
 	}
 
-	let { badgeUrl, deepWikiUrl }: Props = $props();
+	const { badgeUrl, deepWikiUrl }: Props = $props();
 </script>
 
 <div class='flex items-center justify-center py-4'>

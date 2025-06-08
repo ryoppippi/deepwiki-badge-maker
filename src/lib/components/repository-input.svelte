@@ -10,7 +10,7 @@
 		onSubmit?: () => void;
 	}
 
-	let { owner, repo, urlError, onUrlChange, onSubmit }: Props = $props();
+	const { owner, repo, urlError, onUrlChange, onSubmit }: Props = $props();
 </script>
 
 <div class='space-y-2'>
