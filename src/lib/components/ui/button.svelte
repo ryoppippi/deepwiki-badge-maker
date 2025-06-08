@@ -33,7 +33,7 @@
 		children?: import('svelte').Snippet;
 	};
 
-	let {
+	const {
 		class: className = undefined,
 		variant = 'default',
 		size = 'default',

@@ -6,7 +6,7 @@
 		orientation?: 'horizontal' | 'vertical';
 	};
 
-	let {
+	const {
 		class: className = undefined,
 		orientation = 'horizontal',
 		...restProps
