@@ -16,6 +16,10 @@
 		"format:biome": "biome check --write .",
 		"format:knip": "knip --fix --no-exit-code",
 		"typecheck": "tsgo --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:ui": "vitest --ui",
+		"test:e2e": "vitest run --browser",
 		"prepare": "simple-git-hooks"
 	},
 	"packageManager": "pnpm@10.11.0",
@@ -45,7 +49,13 @@
 		"svelte-check": "^5.0.1",
 		"tailwindcss": "^4.1.7",
 		"typescript": "^5.8.3",
-		"vite": "^6.0.7"
+		"vite": "^6.0.7",
+		"vitest": "^2.1.8",
+		"@vitest/browser": "^2.1.8",
+		"@vitest/ui": "^2.1.8",
+		"@testing-library/svelte": "^5.2.7",
+		"@testing-library/user-event": "^14.6.0",
+		"playwright": "^1.50.0"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
