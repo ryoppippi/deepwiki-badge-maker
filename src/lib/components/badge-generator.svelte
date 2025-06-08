@@ -86,7 +86,9 @@
 	}
 
 	async function generateBadge() {
-		if (!owner || !repo) { return; }
+		if (!owner || !repo) {
+			return;
+		}
 
 		isLoading = true;
 		repositoryCheckResult = null;
@@ -163,16 +165,14 @@
 			{:else}
 				<div class='space-y-4'>
 					<div class='flex items-center justify-center py-4'>
-						<Badge class='text-base py-1 px-3' variant='outline'>
-							<a href={deepWikiUrl} rel='noopener noreferrer' target='_blank'>
-								<img alt='DeepWiki Badge' src={badgeUrl} />
-							</a>
-						</Badge>
+						<a href={deepWikiUrl} rel='noopener noreferrer' target='_blank'>
+							<img alt='DeepWiki Badge' src={badgeUrl} />
+						</a>
 					</div>
 
 					<Separator />
 
-					<div class='space-y-2'>
+					<div class='space-y-4'>
 						<h3 class='text-sm font-medium'>Embed this badge in your README</h3>
 
 						<Tabs class='w-full' bind:value={tabValue}>
@@ -180,11 +180,9 @@
 								<TabsTrigger value='markdown'>Markdown</TabsTrigger>
 								<TabsTrigger value='html'>HTML</TabsTrigger>
 							</TabsList>
-							<TabsContent class='space-y-2' value='markdown'>
+							<TabsContent value='markdown'>
 								<div class='relative'>
-									<pre class='bg-muted p-4 rounded-md overflow-x-auto text-sm'>
-										<code>{markdownCode}</code>
-									</pre>
+									<pre class='bg-muted p-4 rounded-md overflow-x-auto text-sm font-mono'><code>{markdownCode}</code></pre>
 									<Button
 										class='absolute top-2 right-2'
 										onclick={() => copyToClipboard(`${markdownCode}\n${creditComment}`, 'markdown')}
@@ -195,11 +193,9 @@
 									</Button>
 								</div>
 							</TabsContent>
-							<TabsContent class='space-y-2' value='html'>
+							<TabsContent value='html'>
 								<div class='relative'>
-									<pre class='bg-muted p-4 rounded-md overflow-x-auto text-sm'>
-										<code>{htmlCode}</code>
-									</pre>
+									<pre class='bg-muted p-4 rounded-md overflow-x-auto text-sm font-mono'><code>{htmlCode}</code></pre>
 									<Button
 										class='absolute top-2 right-2'
 										onclick={() => copyToClipboard(`${htmlCode}\n${creditComment}`, 'html')}
