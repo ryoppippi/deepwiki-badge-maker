@@ -27,7 +27,7 @@
 		type: 'markdown' | 'html';
 	}
 
-	let { type }: Props = $props();
+	const { type }: Props = $props();
 
 	const copyStateInstance = getCopyState();
 	const isCopied = $derived(copyStateInstance[type]);
