@@ -1,5 +1,6 @@
 <script lang='ts'>
 	import { assets } from '$app/paths';
+	import { PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID } from '$env/static/public';
 	import screenshot from '$lib/assets/screenshot.jpeg?url';
 	import GoogleAdsense from '$lib/components/google-adsense.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -8,8 +9,6 @@
 	import '../app.css';
 
 	const { children } = $props();
-
-	const adsenseId = import.meta.env.VITE_GOOGLE_ADSENSE_PUBLISHER_ID || '';
 
 </script>
 
@@ -31,4 +30,4 @@
 
 {@render children()}
 
-<GoogleAdsense pId={adsenseId} />
+<GoogleAdsense pId={PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID ?? ''} />
