@@ -17,7 +17,7 @@ const config = {
 			config(config) {
 				config.include.push(path.join(import.meta.dirname, 'vite.config.ts'));
 				config.include.push(path.join(import.meta.dirname, 'vitest.config.ts'));
-				config.include.push(path.join(import.meta.dirname, 'vitest.workspace.ts'));
+				config.include.push(path.join(import.meta.dirname, 'vitest.browser.config.ts'));
 			},
 		},
 		prerender: {

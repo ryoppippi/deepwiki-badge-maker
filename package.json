@@ -16,7 +16,8 @@
 		"test:watch": "vitest",
 		"test:ui": "vitest --ui",
 		"test:e2e": "vitest run --browser",
-		"prepare": "simple-git-hooks"
+		"prepare": "simple-git-hooks",
+		"test:browser": "vitest --config=vitest.browser.config.ts"
 	},
 	"dependencies": {
 		"@fontsource/fira-mono": "^5.1.0",
@@ -52,14 +53,15 @@
 		"tailwindcss": "^4.1.7",
 		"typescript": "^5.8.3",
 		"vite": "npm:rolldown-vite@latest",
-		"vitest": "^2.1.8"
+		"vitest": "^2.1.8",
+		"vitest-browser-svelte": "^0.1.0"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
 	},
 	"lint-staged": {
 		"*": [
-			"eslint --fix"
+			"eslint --fix --cache"
 		]
 	}
 }

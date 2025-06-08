@@ -105,6 +105,9 @@ importers:
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))
+      vitest-browser-svelte:
+        specifier: ^0.1.0
+        version: 0.1.0(@vitest/browser@2.1.9)(svelte@5.33.18)(vitest@2.1.9)
 
 packages:
 
@@ -2879,6 +2882,14 @@ packages:
     peerDependenciesMeta:
       vite:
         optional: true
+
+  vitest-browser-svelte@0.1.0:
+    resolution: {integrity: sha512-YB6ZUZZQNqU1T9NzvTEDpwpPv35Ng1NZMPBh81zDrLEdOgROGE6nJb79NWb1Eu/a8VkHifqArpOZfJfALge6xQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      '@vitest/browser': ^2.1.0 || ^3.0.0-0
+      svelte: '>3.0.0'
+      vitest: ^2.1.0 || ^3.0.0-0
 
   vitest@2.1.9:
     resolution: {integrity: sha512-MSmPM9REYqDGBI8439mA4mWhV5sKmDlBKWIYbA3lRb2PTHACE0mgKwA8yQ2xq9vxDTuk4iPrECBAEW2aoFXY0Q==}
@@ -5839,6 +5850,12 @@ snapshots:
   vitefu@1.0.6(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)):
     optionalDependencies:
       vite: rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)
+
+  vitest-browser-svelte@0.1.0(@vitest/browser@2.1.9)(svelte@5.33.18)(vitest@2.1.9):
+    dependencies:
+      '@vitest/browser': 2.1.9(@types/node@22.15.18)(playwright@1.52.0)(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))(typescript@5.8.3)(vitest@2.1.9)
+      svelte: 5.33.18
+      vitest: 2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))
 
   vitest@2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3)):
     dependencies:
