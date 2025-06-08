@@ -16,7 +16,8 @@
 	} from '$lib/components/ui';
 	import { base64DevinIcon } from '$lib/deepwiki';
 	import { checkIfRepositoryExists } from '$lib/github';
-	import { Github, Loader } from 'lucide-svelte';
+	import Github from '~icons/lucide/github';
+	import Loader from '~icons/lucide/loader';
 	import CopyIcon, { copyToClipboard } from './copy.svelte';
 
 	let owner = $state('');

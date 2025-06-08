@@ -19,7 +19,6 @@
 		"bits-ui": "^1.0.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
-		"lucide-svelte": "^0.468.0",
 		"mode-watcher": "^0.4.1",
 		"neverthrow": "^8.2.0",
 		"svelte": "^5.15.0",
@@ -27,6 +26,7 @@
 		"tailwind-variants": "^0.3.0"
 	},
 	"devDependencies": {
+		"@iconify-json/lucide": "^1.2.37",
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.15.0",
@@ -46,6 +46,7 @@
 		"tailwindcss": "^4.1.7",
 		"typescript": "^5.8.3",
 		"ufo": "^1.6.1",
+		"unplugin-icons": "^22.1.0",
 		"vite": "npm:rolldown-vite@latest"
 	},
 	"simple-git-hooks": {

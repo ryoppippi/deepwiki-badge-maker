@@ -21,7 +21,8 @@
 </script>
 
 <script lang='ts'>
-	import { Check, Copy } from 'lucide-svelte';
+	import Check from '~icons/lucide/check';
+	import Copy from '~icons/lucide/copy';
 
 	interface Props {
 		type: 'markdown' | 'html';

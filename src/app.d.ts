@@ -1,4 +1,4 @@
-/// <reference types="@sveltejs/kit" />
+import 'unplugin-icons/types/svelte';
 
 declare global {
 	namespace App {
