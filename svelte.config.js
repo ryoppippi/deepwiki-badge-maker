@@ -10,9 +10,6 @@ const config = {
 		adapter: adapter({
 			pages: 'out',
 			assets: 'out',
-			fallback: null,
-			precompress: false,
-			strict: true,
 		}),
 		paths: {
 			/**
