@@ -13,7 +13,7 @@ const config = {
 			strict: true,
 		}),
 		prerender: {
-			handleHttpError: ({ path, referrer, message }) => {
+			handleHttpError: ({ path, _referrer, message }) => {
 				// Ignore missing assets during prerendering
 				if (path === '/favicon.png' || path === '/favicon.svg' || path === '/screenshot.jpeg') {
 					console.warn(`Missing asset: ${path}`);
