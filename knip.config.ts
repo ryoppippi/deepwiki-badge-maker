@@ -1,13 +1,13 @@
 import type { KnipConfig } from "knip";
 
 export default {
-	ignoreDependencies: ["tailwindcss"],
-	next: {
-		config: ["next.config.{js,ts,cjs,mjs}"],
-		entry: [
-			"app/**/*.{js,ts,jsx,tsx}",
-			"./postcss.config.mjs",
-			"./tailwind.config.ts",
-		],
-	},
+	ignoreDependencies: ["tailwindcss", "@sveltejs/adapter-static"],
+	svelte: true,
+	entry: [
+		"src/**/*.{js,ts,svelte}",
+		"./postcss.config.mjs",
+		"./tailwind.config.ts",
+		"./vite.config.ts",
+		"./vitest.config.ts"
+	]
 } satisfies KnipConfig;
