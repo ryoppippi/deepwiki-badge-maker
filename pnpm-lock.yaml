@@ -54,24 +54,12 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.7
         version: 4.1.8(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))
-      '@testing-library/svelte':
-        specifier: ^5.2.7
-        version: 5.2.8(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))(svelte@5.33.18)(vitest@2.1.9)
-      '@testing-library/user-event':
-        specifier: ^14.6.0
-        version: 14.6.1(@testing-library/dom@10.4.0)
       '@types/node':
         specifier: ^22.15.18
         version: 22.15.18
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20250523.1
         version: 7.0.0-dev.20250523.1
-      '@vitest/browser':
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@22.15.18)(playwright@1.52.0)(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))(typescript@5.8.3)(vitest@2.1.9)
-      '@vitest/ui':
-        specifier: ^2.1.8
-        version: 2.1.9(vitest@2.1.9)
       eslint:
         specifier: ^9.18.0
         version: 9.28.0(jiti@2.4.2)
@@ -102,12 +90,6 @@ importers:
       vite:
         specifier: npm:rolldown-vite@latest
         version: rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))
-      vitest-browser-svelte:
-        specifier: ^0.1.0
-        version: 0.1.0(@vitest/browser@2.1.9)(svelte@5.33.18)(vitest@2.1.9)
 
 packages:
 
@@ -892,19 +874,6 @@ packages:
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
     engines: {node: '>=18'}
-
-  '@testing-library/svelte@5.2.8':
-    resolution: {integrity: sha512-ucQOtGsJhtawOEtUmbR4rRh53e6RbM1KUluJIXRmh6D4UzxR847iIqqjRtg9mHNFmGQ8Vkam9yVcR5d1mhIHKA==}
-    engines: {node: '>= 10'}
-    peerDependencies:
-      svelte: ^3 || ^4 || ^5 || ^5.0.0-next.0
-      vite: '*'
-      vitest: '*'
-    peerDependenciesMeta:
-      vite:
-        optional: true
-      vitest:
-        optional: true
 
   '@testing-library/user-event@14.6.1':
     resolution: {integrity: sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==}
@@ -2883,14 +2852,6 @@ packages:
       vite:
         optional: true
 
-  vitest-browser-svelte@0.1.0:
-    resolution: {integrity: sha512-YB6ZUZZQNqU1T9NzvTEDpwpPv35Ng1NZMPBh81zDrLEdOgROGE6nJb79NWb1Eu/a8VkHifqArpOZfJfALge6xQ==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    peerDependencies:
-      '@vitest/browser': ^2.1.0 || ^3.0.0-0
-      svelte: '>3.0.0'
-      vitest: ^2.1.0 || ^3.0.0-0
-
   vitest@2.1.9:
     resolution: {integrity: sha512-MSmPM9REYqDGBI8439mA4mWhV5sKmDlBKWIYbA3lRb2PTHACE0mgKwA8yQ2xq9vxDTuk4iPrECBAEW2aoFXY0Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -3073,6 +3034,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.27.1
       js-tokens: 4.0.0
       picocolors: 1.1.1
+    optional: true
 
   '@babel/helper-string-parser@7.27.1': {}
 
@@ -3084,7 +3046,8 @@ snapshots:
     dependencies:
       '@babel/types': 7.27.6
 
-  '@babel/runtime@7.27.6': {}
+  '@babel/runtime@7.27.6':
+    optional: true
 
   '@babel/types@7.27.6':
     dependencies:
@@ -3094,15 +3057,18 @@ snapshots:
   '@bundled-es-modules/cookie@2.0.1':
     dependencies:
       cookie: 0.7.2
+    optional: true
 
   '@bundled-es-modules/statuses@1.0.1':
     dependencies:
       statuses: 2.0.2
+    optional: true
 
   '@bundled-es-modules/tough-cookie@0.1.6':
     dependencies:
       '@types/tough-cookie': 4.0.5
       tough-cookie: 4.1.4
+    optional: true
 
   '@clack/core@0.5.0':
     dependencies:
@@ -3321,6 +3287,7 @@ snapshots:
       '@inquirer/type': 3.0.7(@types/node@22.15.18)
     optionalDependencies:
       '@types/node': 22.15.18
+    optional: true
 
   '@inquirer/core@10.1.13(@types/node@22.15.18)':
     dependencies:
@@ -3334,12 +3301,15 @@ snapshots:
       yoctocolors-cjs: 2.1.2
     optionalDependencies:
       '@types/node': 22.15.18
+    optional: true
 
-  '@inquirer/figures@1.0.12': {}
+  '@inquirer/figures@1.0.12':
+    optional: true
 
   '@inquirer/type@3.0.7(@types/node@22.15.18)':
     optionalDependencies:
       '@types/node': 22.15.18
+    optional: true
 
   '@internationalized/date@3.8.2':
     dependencies:
@@ -3374,6 +3344,7 @@ snapshots:
       is-node-process: 1.2.0
       outvariant: 1.4.3
       strict-event-emitter: 0.5.1
+    optional: true
 
   '@napi-rs/wasm-runtime@0.2.11':
     dependencies:
@@ -3394,14 +3365,17 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@open-draft/deferred-promise@2.2.0': {}
+  '@open-draft/deferred-promise@2.2.0':
+    optional: true
 
   '@open-draft/logger@0.3.0':
     dependencies:
       is-node-process: 1.2.0
       outvariant: 1.4.3
+    optional: true
 
-  '@open-draft/until@2.1.0': {}
+  '@open-draft/until@2.1.0':
+    optional: true
 
   '@oxc-project/runtime@0.72.2': {}
 
@@ -3689,25 +3663,20 @@ snapshots:
       dom-accessibility-api: 0.5.16
       lz-string: 1.5.0
       pretty-format: 27.5.1
-
-  '@testing-library/svelte@5.2.8(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))(svelte@5.33.18)(vitest@2.1.9)':
-    dependencies:
-      '@testing-library/dom': 10.4.0
-      svelte: 5.33.18
-    optionalDependencies:
-      vite: rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)
-      vitest: 2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))
+    optional: true
 
   '@testing-library/user-event@14.6.1(@testing-library/dom@10.4.0)':
     dependencies:
       '@testing-library/dom': 10.4.0
+    optional: true
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
       tslib: 2.8.1
     optional: true
 
-  '@types/aria-query@5.0.4': {}
+  '@types/aria-query@5.0.4':
+    optional: true
 
   '@types/cookie@0.6.0': {}
 
@@ -3715,7 +3684,8 @@ snapshots:
     dependencies:
       '@types/ms': 2.1.0
 
-  '@types/estree@1.0.7': {}
+  '@types/estree@1.0.7':
+    optional: true
 
   '@types/estree@1.0.8': {}
 
@@ -3731,9 +3701,11 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/statuses@2.0.6': {}
+  '@types/statuses@2.0.6':
+    optional: true
 
-  '@types/tough-cookie@4.0.5': {}
+  '@types/tough-cookie@4.0.5':
+    optional: true
 
   '@types/unist@3.0.3': {}
 
@@ -3880,6 +3852,7 @@ snapshots:
       - typescript
       - utf-8-validate
       - vite
+    optional: true
 
   '@vitest/eslint-plugin@1.2.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)(vitest@2.1.9)':
     dependencies:
@@ -3897,6 +3870,7 @@ snapshots:
       '@vitest/utils': 2.1.9
       chai: 5.2.0
       tinyrainbow: 1.2.0
+    optional: true
 
   '@vitest/mocker@2.1.9(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))':
     dependencies:
@@ -3906,6 +3880,7 @@ snapshots:
     optionalDependencies:
       msw: 2.10.1(@types/node@22.15.18)(typescript@5.8.3)
       vite: rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)
+    optional: true
 
   '@vitest/mocker@2.1.9(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))(vite@5.4.19(@types/node@22.15.18)(lightningcss@1.30.1))':
     dependencies:
@@ -3915,25 +3890,30 @@ snapshots:
     optionalDependencies:
       msw: 2.10.1(@types/node@22.15.18)(typescript@5.8.3)
       vite: 5.4.19(@types/node@22.15.18)(lightningcss@1.30.1)
+    optional: true
 
   '@vitest/pretty-format@2.1.9':
     dependencies:
       tinyrainbow: 1.2.0
+    optional: true
 
   '@vitest/runner@2.1.9':
     dependencies:
       '@vitest/utils': 2.1.9
       pathe: 1.1.2
+    optional: true
 
   '@vitest/snapshot@2.1.9':
     dependencies:
       '@vitest/pretty-format': 2.1.9
       magic-string: 0.30.17
       pathe: 1.1.2
+    optional: true
 
   '@vitest/spy@2.1.9':
     dependencies:
       tinyspy: 3.0.2
+    optional: true
 
   '@vitest/ui@2.1.9(vitest@2.1.9)':
     dependencies:
@@ -3945,12 +3925,14 @@ snapshots:
       tinyglobby: 0.2.14
       tinyrainbow: 1.2.0
       vitest: 2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))
+    optional: true
 
   '@vitest/utils@2.1.9':
     dependencies:
       '@vitest/pretty-format': 2.1.9
       loupe: 3.1.3
       tinyrainbow: 1.2.0
+    optional: true
 
   '@vue/compiler-core@3.5.16':
     dependencies:
@@ -4000,12 +3982,14 @@ snapshots:
   ansi-escapes@4.3.2:
     dependencies:
       type-fest: 0.21.3
+    optional: true
 
   ansi-escapes@7.0.0:
     dependencies:
       environment: 1.1.0
 
-  ansi-regex@5.0.1: {}
+  ansi-regex@5.0.1:
+    optional: true
 
   ansi-regex@6.1.0: {}
 
@@ -4013,7 +3997,8 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  ansi-styles@5.2.0: {}
+  ansi-styles@5.2.0:
+    optional: true
 
   ansi-styles@6.2.1: {}
 
@@ -4026,10 +4011,12 @@ snapshots:
   aria-query@5.3.0:
     dependencies:
       dequal: 2.0.3
+    optional: true
 
   aria-query@5.3.2: {}
 
-  assertion-error@2.0.1: {}
+  assertion-error@2.0.1:
+    optional: true
 
   axobject-query@4.1.0: {}
 
@@ -4086,6 +4073,7 @@ snapshots:
       deep-eql: 5.0.2
       loupe: 3.1.3
       pathval: 2.0.0
+    optional: true
 
   chalk@4.1.2:
     dependencies:
@@ -4096,7 +4084,8 @@ snapshots:
 
   character-entities@2.0.2: {}
 
-  check-error@2.1.1: {}
+  check-error@2.1.1:
+    optional: true
 
   chokidar@4.0.3:
     dependencies:
@@ -4123,13 +4112,15 @@ snapshots:
       slice-ansi: 5.0.0
       string-width: 7.2.0
 
-  cli-width@4.1.0: {}
+  cli-width@4.1.0:
+    optional: true
 
   cliui@8.0.1:
     dependencies:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+    optional: true
 
   clsx@2.1.1: {}
 
@@ -4153,7 +4144,8 @@ snapshots:
 
   cookie@0.6.0: {}
 
-  cookie@0.7.2: {}
+  cookie@0.7.2:
+    optional: true
 
   core-js-compat@3.42.0:
     dependencies:
@@ -4181,7 +4173,8 @@ snapshots:
     dependencies:
       character-entities: 2.0.2
 
-  deep-eql@5.0.2: {}
+  deep-eql@5.0.2:
+    optional: true
 
   deep-is@0.1.4: {}
 
@@ -4197,13 +4190,15 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  dom-accessibility-api@0.5.16: {}
+  dom-accessibility-api@0.5.16:
+    optional: true
 
   electron-to-chromium@1.5.165: {}
 
   emoji-regex@10.4.0: {}
 
-  emoji-regex@8.0.0: {}
+  emoji-regex@8.0.0:
+    optional: true
 
   enhanced-resolve@5.18.1:
     dependencies:
@@ -4214,7 +4209,8 @@ snapshots:
 
   environment@1.1.0: {}
 
-  es-module-lexer@1.7.0: {}
+  es-module-lexer@1.7.0:
+    optional: true
 
   esbuild@0.21.5:
     optionalDependencies:
@@ -4241,6 +4237,7 @@ snapshots:
       '@esbuild/win32-arm64': 0.21.5
       '@esbuild/win32-ia32': 0.21.5
       '@esbuild/win32-x64': 0.21.5
+    optional: true
 
   escalade@3.2.0: {}
 
@@ -4564,6 +4561,7 @@ snapshots:
   estree-walker@3.0.3:
     dependencies:
       '@types/estree': 1.0.8
+    optional: true
 
   esutils@2.0.3: {}
 
@@ -4581,7 +4579,8 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  expect-type@1.2.1: {}
+  expect-type@1.2.1:
+    optional: true
 
   exsolve@1.0.5: {}
 
@@ -4613,7 +4612,8 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.2
 
-  fflate@0.8.2: {}
+  fflate@0.8.2:
+    optional: true
 
   file-entry-cache@8.0.0:
     dependencies:
@@ -4645,7 +4645,8 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  get-caller-file@2.0.5: {}
+  get-caller-file@2.0.5:
+    optional: true
 
   get-east-asian-width@1.3.0: {}
 
@@ -4673,11 +4674,13 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql@16.11.0: {}
+  graphql@16.11.0:
+    optional: true
 
   has-flag@4.0.0: {}
 
-  headers-polyfill@4.0.3: {}
+  headers-polyfill@4.0.3:
+    optional: true
 
   human-signals@5.0.0: {}
 
@@ -4702,7 +4705,8 @@ snapshots:
 
   is-extglob@2.1.1: {}
 
-  is-fullwidth-code-point@3.0.0: {}
+  is-fullwidth-code-point@3.0.0:
+    optional: true
 
   is-fullwidth-code-point@4.0.0: {}
 
@@ -4714,7 +4718,8 @@ snapshots:
     dependencies:
       is-extglob: 2.1.1
 
-  is-node-process@1.2.0: {}
+  is-node-process@1.2.0:
+    optional: true
 
   is-number@7.0.0: {}
 
@@ -4728,7 +4733,8 @@ snapshots:
 
   jiti@2.4.2: {}
 
-  js-tokens@4.0.0: {}
+  js-tokens@4.0.0:
+    optional: true
 
   js-yaml@4.1.0:
     dependencies:
@@ -4865,13 +4871,15 @@ snapshots:
 
   longest-streak@3.1.0: {}
 
-  loupe@3.1.3: {}
+  loupe@3.1.3:
+    optional: true
 
   lucide-svelte@0.468.0(svelte@5.33.18):
     dependencies:
       svelte: 5.33.18
 
-  lz-string@1.5.0: {}
+  lz-string@1.5.0:
+    optional: true
 
   magic-string@0.30.17:
     dependencies:
@@ -5262,8 +5270,10 @@ snapshots:
       typescript: 5.8.3
     transitivePeerDependencies:
       - '@types/node'
+    optional: true
 
-  mute-stream@2.0.0: {}
+  mute-stream@2.0.0:
+    optional: true
 
   nanoid@3.3.11: {}
 
@@ -5302,7 +5312,8 @@ snapshots:
       type-check: 0.4.0
       word-wrap: 1.2.5
 
-  outvariant@1.4.3: {}
+  outvariant@1.4.3:
+    optional: true
 
   p-limit@3.1.0:
     dependencies:
@@ -5332,13 +5343,16 @@ snapshots:
 
   path-key@4.0.0: {}
 
-  path-to-regexp@6.3.0: {}
+  path-to-regexp@6.3.0:
+    optional: true
 
-  pathe@1.1.2: {}
+  pathe@1.1.2:
+    optional: true
 
   pathe@2.0.3: {}
 
-  pathval@2.0.0: {}
+  pathval@2.0.0:
+    optional: true
 
   picocolors@1.1.1: {}
 
@@ -5418,20 +5432,24 @@ snapshots:
       ansi-regex: 5.0.1
       ansi-styles: 5.2.0
       react-is: 17.0.2
+    optional: true
 
   psl@1.15.0:
     dependencies:
       punycode: 2.3.1
+    optional: true
 
   punycode@2.3.1: {}
 
   quansync@0.2.10: {}
 
-  querystringify@2.2.0: {}
+  querystringify@2.2.0:
+    optional: true
 
   queue-microtask@1.2.3: {}
 
-  react-is@17.0.2: {}
+  react-is@17.0.2:
+    optional: true
 
   readdirp@4.1.2: {}
 
@@ -5450,9 +5468,11 @@ snapshots:
     dependencies:
       jsesc: 3.0.2
 
-  require-directory@2.1.1: {}
+  require-directory@2.1.1:
+    optional: true
 
-  requires-port@1.0.0: {}
+  requires-port@1.0.0:
+    optional: true
 
   resolve-from@4.0.0: {}
 
@@ -5527,6 +5547,7 @@ snapshots:
       '@rollup/rollup-win32-ia32-msvc': 4.42.0
       '@rollup/rollup-win32-x64-msvc': 4.42.0
       fsevents: 2.3.3
+    optional: true
 
   run-parallel@1.2.0:
     dependencies:
@@ -5559,7 +5580,8 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  siginfo@2.0.0: {}
+  siginfo@2.0.0:
+    optional: true
 
   signal-exit@4.1.0: {}
 
@@ -5594,13 +5616,17 @@ snapshots:
 
   spdx-license-ids@3.0.21: {}
 
-  stackback@0.0.2: {}
+  stackback@0.0.2:
+    optional: true
 
-  statuses@2.0.2: {}
+  statuses@2.0.2:
+    optional: true
 
-  std-env@3.9.0: {}
+  std-env@3.9.0:
+    optional: true
 
-  strict-event-emitter@0.5.1: {}
+  strict-event-emitter@0.5.1:
+    optional: true
 
   string-argv@0.3.2: {}
 
@@ -5609,6 +5635,7 @@ snapshots:
       emoji-regex: 8.0.0
       is-fullwidth-code-point: 3.0.0
       strip-ansi: 6.0.1
+    optional: true
 
   string-width@7.2.0:
     dependencies:
@@ -5619,6 +5646,7 @@ snapshots:
   strip-ansi@6.0.1:
     dependencies:
       ansi-regex: 5.0.1
+    optional: true
 
   strip-ansi@7.1.0:
     dependencies:
@@ -5722,9 +5750,11 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
-  tinybench@2.9.0: {}
+  tinybench@2.9.0:
+    optional: true
 
-  tinyexec@0.3.2: {}
+  tinyexec@0.3.2:
+    optional: true
 
   tinyexec@1.0.1: {}
 
@@ -5733,11 +5763,14 @@ snapshots:
       fdir: 6.4.5(picomatch@4.0.2)
       picomatch: 4.0.2
 
-  tinypool@1.1.0: {}
+  tinypool@1.1.0:
+    optional: true
 
-  tinyrainbow@1.2.0: {}
+  tinyrainbow@1.2.0:
+    optional: true
 
-  tinyspy@3.0.2: {}
+  tinyspy@3.0.2:
+    optional: true
 
   to-regex-range@5.0.1:
     dependencies:
@@ -5755,6 +5788,7 @@ snapshots:
       punycode: 2.3.1
       universalify: 0.2.0
       url-parse: 1.5.10
+    optional: true
 
   ts-api-utils@2.1.0(typescript@5.8.3):
     dependencies:
@@ -5771,9 +5805,11 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
 
-  type-fest@0.21.3: {}
+  type-fest@0.21.3:
+    optional: true
 
-  type-fest@4.41.0: {}
+  type-fest@4.41.0:
+    optional: true
 
   typescript@5.8.3: {}
 
@@ -5800,7 +5836,8 @@ snapshots:
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
 
-  universalify@0.2.0: {}
+  universalify@0.2.0:
+    optional: true
 
   update-browserslist-db@1.1.3(browserslist@4.25.0):
     dependencies:
@@ -5816,6 +5853,7 @@ snapshots:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+    optional: true
 
   util-deprecate@1.0.2: {}
 
@@ -5836,6 +5874,7 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+    optional: true
 
   vite@5.4.19(@types/node@22.15.18)(lightningcss@1.30.1):
     dependencies:
@@ -5846,16 +5885,11 @@ snapshots:
       '@types/node': 22.15.18
       fsevents: 2.3.3
       lightningcss: 1.30.1
+    optional: true
 
   vitefu@1.0.6(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)):
     optionalDependencies:
       vite: rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)
-
-  vitest-browser-svelte@0.1.0(@vitest/browser@2.1.9)(svelte@5.33.18)(vitest@2.1.9):
-    dependencies:
-      '@vitest/browser': 2.1.9(@types/node@22.15.18)(playwright@1.52.0)(rolldown-vite@6.3.18(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))(typescript@5.8.3)(vitest@2.1.9)
-      svelte: 5.33.18
-      vitest: 2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3))
 
   vitest@2.1.9(@types/node@22.15.18)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(lightningcss@1.30.1)(msw@2.10.1(@types/node@22.15.18)(typescript@5.8.3)):
     dependencies:
@@ -5893,6 +5927,7 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+    optional: true
 
   vue-eslint-parser@10.1.3(eslint@9.28.0(jiti@2.4.2)):
     dependencies:
@@ -5915,6 +5950,7 @@ snapshots:
     dependencies:
       siginfo: 2.0.0
       stackback: 0.0.2
+    optional: true
 
   word-wrap@1.2.5: {}
 
@@ -5923,12 +5959,14 @@ snapshots:
       ansi-styles: 4.3.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+    optional: true
 
   wrap-ansi@7.0.0:
     dependencies:
       ansi-styles: 4.3.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+    optional: true
 
   wrap-ansi@9.0.0:
     dependencies:
@@ -5936,11 +5974,13 @@ snapshots:
       string-width: 7.2.0
       strip-ansi: 7.1.0
 
-  ws@8.18.2: {}
+  ws@8.18.2:
+    optional: true
 
   xml-name-validator@4.0.0: {}
 
-  y18n@5.0.8: {}
+  y18n@5.0.8:
+    optional: true
 
   yallist@5.0.0: {}
 
@@ -5953,7 +5993,8 @@ snapshots:
 
   yaml@2.7.1: {}
 
-  yargs-parser@21.1.1: {}
+  yargs-parser@21.1.1:
+    optional: true
 
   yargs@17.7.2:
     dependencies:
@@ -5964,10 +6005,12 @@ snapshots:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+    optional: true
 
   yocto-queue@0.1.0: {}
 
-  yoctocolors-cjs@2.1.2: {}
+  yoctocolors-cjs@2.1.2:
+    optional: true
 
   zimmerframe@1.1.2: {}
 
