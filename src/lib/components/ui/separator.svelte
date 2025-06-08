@@ -13,6 +13,7 @@
 	}: Props = $props();
 </script>
 
+<!-- svelte-ignore element_invalid_self_closing_tag -->
 <div
 	class={cn(
 		'shrink-0 bg-border',
