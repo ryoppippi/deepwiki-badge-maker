@@ -40,9 +40,12 @@
 		"lint-staged": "^15.5.0",
 		"playwright": "^1.50.0",
 		"simple-git-hooks": "^2.12.1",
+		"std-env": "^3.9.0",
 		"svelte-check": "^4.2.1",
+		"svelte-meta-tags": "^4.4.0",
 		"tailwindcss": "^4.1.7",
 		"typescript": "^5.8.3",
+		"ufo": "^1.6.1",
 		"vite": "npm:rolldown-vite@latest"
 	},
 	"simple-git-hooks": {

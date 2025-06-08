@@ -1,5 +1,7 @@
+import process from 'node:process';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { isDevelopment } from 'std-env';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,15 +14,16 @@ const config = {
 			precompress: false,
 			strict: true,
 		}),
-		prerender: {
-			handleHttpError: ({ path, message }) => {
-				// Ignore missing assets during prerendering
-				if (path === '/favicon.png' || path === '/favicon.svg' || path === '/screenshot.jpeg') {
-					console.warn(`Missing asset: ${path}`);
-					return;
-				}
-				throw new Error(message);
-			},
+		paths: {
+			/**
+			  @see https://developers.cloudflare.com/pages/configuration/build-configuration#environment-variables
+			  @see https://kit.svelte.jp/docs/configuration#paths
+			 */
+			assets: (isDevelopment
+				? ''
+				: process.env.CF_PAGES_BRANCH !== 'main'
+					? process.env.CF_PAGES_URL
+					: undefined) ?? 'https://deepwiki.ryoppippi.com',
 		},
 	},
 };
