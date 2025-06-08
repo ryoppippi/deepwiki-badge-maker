@@ -38,7 +38,6 @@
 		"eslint-plugin-format": "^1.0.1",
 		"eslint-plugin-svelte": "^3.9.1",
 		"lint-staged": "^15.5.0",
-		"playwright": "^1.50.0",
 		"simple-git-hooks": "^2.12.1",
 		"std-env": "^3.9.0",
 		"svelte-check": "^4.2.1",
