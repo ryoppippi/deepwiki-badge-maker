@@ -1,12 +1,12 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
-	
+
 	type Props = HTMLAttributes<HTMLDivElement> & {
 		orientation?: 'horizontal' | 'vertical';
 	};
-	
-	let { 
+
+	let {
 		class: className = undefined,
 		orientation = 'horizontal',
 		...restProps
@@ -15,9 +15,9 @@
 
 <div
 	class={cn(
-		"shrink-0 bg-border",
-		orientation === 'horizontal' ? "h-[1px] w-full" : "h-full w-[1px]",
-		className
+		'shrink-0 bg-border',
+		orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
+		className,
 	)}
 	{...restProps}
 />

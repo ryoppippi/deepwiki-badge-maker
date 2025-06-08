@@ -1,12 +1,12 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
-	
+
 	type Props = HTMLAttributes<HTMLDivElement> & {
 		children?: import('svelte').Snippet;
 	};
-	
-	let { 
+
+	let {
 		class: className = undefined,
 		children,
 		...restProps
@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class={cn("flex flex-col space-y-1.5 p-6", className)}
+	class={cn('flex flex-col space-y-1.5 p-6', className)}
 	{...restProps}
 >
 	{#if children}

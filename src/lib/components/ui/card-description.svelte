@@ -1,12 +1,12 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
-	
+
 	type Props = HTMLAttributes<HTMLParagraphElement> & {
 		children?: import('svelte').Snippet;
 	};
-	
-	let { 
+
+	let {
 		class: className = undefined,
 		children,
 		...restProps
@@ -14,7 +14,7 @@
 </script>
 
 <p
-	class={cn("text-sm text-muted-foreground", className)}
+	class={cn('text-sm text-muted-foreground', className)}
 	{...restProps}
 >
 	{#if children}

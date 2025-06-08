@@ -1,13 +1,13 @@
 export { default as Badge } from './badge.svelte';
 export { default as Button } from './button.svelte';
-export { default as Card } from './card.svelte';
 export { default as CardContent } from './card-content.svelte';
 export { default as CardDescription } from './card-description.svelte';
 export { default as CardHeader } from './card-header.svelte';
 export { default as CardTitle } from './card-title.svelte';
+export { default as Card } from './card.svelte';
 export { default as Input } from './input.svelte';
 export { default as Separator } from './separator.svelte';
-export { default as Tabs } from './tabs.svelte';
 export { default as TabsContent } from './tabs-content.svelte';
 export { default as TabsList } from './tabs-list.svelte';
 export { default as TabsTrigger } from './tabs-trigger.svelte';
+export { default as Tabs } from './tabs.svelte';
