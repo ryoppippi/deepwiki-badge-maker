@@ -1,11 +1,12 @@
-import { err, ok, type Result } from 'neverthrow';
+import type { Result } from 'neverthrow';
+import { err, ok } from 'neverthrow';
 
 export async function checkIfRepositoryExists({
 	owner,
 	repo,
 }: { owner: string; repo: string }): Promise<
-		Result<{ owner: string; repo: string }, Error>
-	> {
+	Result<{ owner: string; repo: string }, Error>
+> {
 	const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
 		method: 'GET',
 	});
